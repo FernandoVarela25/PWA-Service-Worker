@@ -40,7 +40,7 @@
   ],
   "splash_screen": {
     "show": true,
-    "src": "./utps.png",
+    "src": "./UTP.png",
     "sizes": "159x1656",
     "type": "image/png"
   }
