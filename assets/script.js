@@ -1,12 +1,4 @@
-/* script.js */
-document.addEventListener("DOMContentLoaded", function() {
-    // Muestra la pantalla Splash al cargar la página
-    showSplashScreen();
-
-    // Oculta la pantalla Splash después de un tiempo (por ejemplo, 2 segundos)
-    setTimeout(hideSplashScreen, 2000);
-});
-
+// script.js
 function showSplashScreen() {
     var splashScreen = document.createElement("div");
     splashScreen.classList.add("splash-screen");
@@ -17,11 +9,31 @@ function showSplashScreen() {
 
     splashScreen.appendChild(splashText);
     document.body.appendChild(splashScreen);
+
+    return splashScreen; // Devolver la referencia a la pantalla de inicio
 }
 
-function hideSplashScreen() {
-    var splashScreen = document.querySelector(".splash-screen");
+function hideSplashScreen(splashScreen) {
     if (splashScreen) {
         splashScreen.remove();
     }
 }
+
+function loadContent(url, nameFunction) {
+    var splashScreen = showSplashScreen(); // Mostrar la pantalla de inicio al cargar la nueva página
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        setTimeout(function() {
+            hideSplashScreen(splashScreen); // Ocultar la pantalla de inicio después de 2 segundos
+        }, 2000);
+        nameFunction(this);
+        loadStyles();
+    };
+    xhttp.open("GET", url);
+    xhttp.send();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    loadContent('Archives/Portada.html', loadPortada); // Cargar contenido por defecto al iniciar la página
+});
