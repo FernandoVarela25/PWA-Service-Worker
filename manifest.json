@@ -15,25 +15,25 @@
       },
       {
         "src": "./utps.png",
-        "sizes": "192x192",
+        "sizes": "159x165",
         "type": "image/png"
       },
       {
         "src": "./utps.png",
-        "sizes": "512x512",
+        "sizes": "159x165",
         "type": "image/png"
       }
     ],
     "screenshots": [
       {
         "src": "./utps.png",
-        "sizes": "1280x800",
+        "sizes": "159x165",
         "type": "image/png",
         "form_factor": "wide"
       },
       {
         "src": "./utps.png",
-        "sizes": "640x1136",
+        "sizes": "159x165",
         "type": "image/png",
         "form_factor": "any"
       }
